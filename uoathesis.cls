@@ -1,7 +1,7 @@
 % uoathesis.cls — University of Auckland Thesis Class
 % Based on: "Guide to the presentation and submission of research components in sub-doctoral qualifications" (University of Auckland)
 % https://www.auckland.ac.nz/en/students/academic-information/postgraduate-students/postgraduate/postgraduate-policies-guidelines-and-forms/presentation-submission-research-sub-doctoral.html
-% Author: Haochen Zhang
+% Author: Xincheng Li
 % Compile with: XeLaTeX
 % Version: 1.0 (2026/05/13)
 
