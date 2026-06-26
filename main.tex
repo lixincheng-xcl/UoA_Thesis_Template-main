@@ -1,3 +1,4 @@
+% !TEX program = xelatex
 % main.tex — University of Auckland Thesis
 % Based on: "Guide to the presentation and submission of research components in sub-doctoral qualifications" (University of Auckland)
 % https://www.auckland.ac.nz/en/students/academic-information/postgraduate-students/postgraduate/postgraduate-policies-guidelines-and-forms/presentation-submission-research-sub-doctoral.html
@@ -5,12 +6,8 @@
 % Compile with: XeLaTeX
 % Version: 1.0 (2026/05/13)
 % ── 字体说明 ──────────────────────────────────────────
-% 默认使用 Times New Roman（Windows 系统自带）。
-% macOS / Linux 用户若编译报 "font not found"：
-%   1. 打开 uoathesis.cls，找到 \setmainfont 行
-%   2. 将 Times New Roman 改为 TeX Gyre Termes
-%   3. 终端执行：sudo apt install texlive-fonts-extra  (Linux)
-%      或 brew install tex-gyre  (macOS + MacTeX)
+% 默认优先使用 Times New Roman；若系统或 Overleaf 中不存在，
+% 模板会自动改用 TeX Gyre Termes（开源 Times 风格字体）。
 \documentclass{uoathesis}
 
 % ============================================

@@ -17,15 +17,15 @@
 \LoadClass[12pt,a4paper]{report}                              %字体大小可调，A4纸张
 
 % ============================================================
-%  2. Typography — XeLaTeX + Times New Roman (per UoA guide)
+%  2. Typography — XeLaTeX + Times-compatible font
 % ============================================================
 \RequirePackage{fontspec}
 % ── 字体选择 ──────────────────────────────────────────
-% Windows 用户：保持 Times New Roman（系统自带）
-% macOS / Linux 用户：推荐改为 TeX Gyre Termes（开源等价字体，需安装 tex-gyre）
-%   用法：把下面这行注释掉，取消下一行注释即可
-\setmainfont{Times New Roman}                                 %字体类型可调
-% \setmainfont{TeX Gyre Termes}                              % 开源替代字体
+% 优先使用 Times New Roman；若系统或 Overleaf 中不存在，则自动使用
+% TeX Gyre Termes（开源 Times 风格字体，TeX Live / Overleaf 默认可用）。
+\IfFontExistsTF{Times New Roman}
+  {\setmainfont{Times New Roman}}
+  {\setmainfont{TeX Gyre Termes}}
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
