@@ -1,0 +1,58 @@
+{
+    // ============================================================
+    // LaTeX Workshop 配置
+    // 前提：xelatex / biber 必须在系统 PATH 中
+    //   - Windows: 安装 MiKTeX 或 TeX Live 后通常已自动加入 PATH
+    //   - macOS:   brew install --cask mactex 或安装 MacTeX
+    //   - Linux:   sudo apt install texlive-xetex biber
+    //
+    // 编译链简化为 XeLaTeX → Biber → XeLaTeX × 2
+    // 术语表/缩略语/符号表已改用普通 LaTeX 表格，无需 makeindex
+    // ============================================================
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex → biber → xelatex × 2",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex × 2",
+            "tools": [
+                "xelatex",
+                "xelatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.recipe.default": "xelatex → biber → xelatex × 2",
+    "latex-workshop.latex.autoClean.run": "never",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.message.error.show": true,
+    "latex-workshop.message.warning.show": true
+}

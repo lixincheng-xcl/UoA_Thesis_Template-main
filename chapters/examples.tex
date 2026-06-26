@@ -1,0 +1,391 @@
+% ============================================================
+%  DEMO CHAPTER — 展示模板所有常用功能
+% ============================================================
+
+\chapter{Template Feature Demonstrations}
+\label{chap:examples}
+
+This chapter demonstrates all the common features available in this
+template. Use it as a reference when writing your thesis.
+
+% ======================================================================
+\section{Text Formatting}
+\label{sec:text}
+
+\textbf{Bold text} and \textit{italic text} and \textsc{Small Caps}.
+You can also combine them: \textbf{\textit{bold italic}}.
+
+% ======================================================================
+\section{Citations and Paragraph Formatting}
+\label{sec:citations}
+
+\subsection{In-Text Citation Examples}
+
+The following examples demonstrate common citation patterns using the
+APA style.
+
+\textbf{Parenthetical citations} — the most common form:
+several studies have investigated deep learning for image recognition
+\parencite{chen2023survey}.  Convolutional neural networks remain the
+dominant architecture in this domain \parencite{liu2024cnn}, though
+recent work suggests alternatives \parencite{example2024}.
+
+\textbf{Narrative citations} — the author's name appears as
+part of the sentence: \textcite{examplebook2023} provided
+a comprehensive overview of academic writing conventions.  More
+recently, \textcite{chen2023survey} surveyed over 200 papers on
+natural language processing applications.  In her doctoral work,
+\textcite{kim2023dissertation} developed novel computational methods
+for genomic analysis.
+
+\textbf{Multiple citations together}: prior work has
+addressed this problem from several angles \parencite{example2024,
+chen2023survey,liu2024cnn}.  When citing multiple sources, APA style
+orders them alphabetically and separates with semicolons.
+
+\textbf{Citing specific parts}: gradient-based methods are widely
+adopted \parencite[see][chap.\ 3]{patel2024optimisation}, and the
+implementation details are well-documented
+\parencite{moore2024documentation}.  Technical standards also provide
+guidance on data formats \parencite{ietf2024}.
+
+\textbf{Year-only and page citations}: the foundational work appeared
+in \citeyear{examplebook2023}, and later extensions can be found in
+\textcite[p.~45]{wang2024thesis}.
+
+\subsection{Paragraph Spacing and Indentation}
+
+The following two paragraphs demonstrate the default paragraph
+formatting in this template.  Paragraphs are separated by vertical
+space (1.5-line spacing throughout) with no first-line indentation,
+as commonly used in theses following UoA guidelines.
+
+The advent of deep learning has fundamentally transformed the
+landscape of artificial intelligence research over the past decade.
+Convolutional neural networks \parencite{liu2024cnn}, recurrent
+architectures, and more recently transformer-based models have
+achieved state-of-the-art performance across a wide range of tasks
+including computer vision, natural language processing, and speech
+recognition.  This rapid progress has been driven by the convergence
+of several key factors: the availability of large-scale annotated
+datasets, the development of powerful graphics processing units for
+parallel computation, and algorithmic innovations in training deep
+networks.  The impact of these advances extends beyond academic
+research into industrial applications, where deep learning systems
+now power everything from recommendation engines to autonomous
+vehicles.
+
+Despite these remarkable achievements, significant challenges remain.
+Modern deep learning models require enormous computational resources
+for training, raising concerns about energy consumption and
+environmental impact \parencite{chen2023survey}.  Moreover, these
+models often function as black boxes, making it difficult to
+interpret their decisions or to guarantee their reliability in
+safety-critical applications.  Researchers have proposed various
+approaches to address these limitations, including model compression
+techniques \parencite{wang2024thesis}, interpretability methods, and
+the integration of domain knowledge through hybrid architectures
+\parencite{patel2024optimisation}.  Addressing these challenges is
+essential for the responsible deployment of AI systems in healthcare,
+transportation, and other domains where errors can have serious
+consequences.
+
+% ======================================================================
+\section{Lists}
+\label{sec:lists}
+
+\subsection{Unordered List (itemize)}
+
+The following factors were considered:
+\begin{itemize}
+  \item Data quality and availability
+  \item Computational resources
+  \item Prior work in the field
+  \begin{itemize}
+    \item Sub-factor A --- nested lists are supported
+    \item Sub-factor B
+  \end{itemize}
+  \item Ethical considerations
+\end{itemize}
+
+\subsection{Ordered List (enumerate)}
+
+The experiment proceeded as follows:
+\begin{enumerate}
+  \item Collect raw data from the sensors.
+  \item Pre-process the data using standard normalisation.
+  \item Train the model for 100 epochs.
+  \item Evaluate on the held-out test set.
+\end{enumerate}
+
+\subsection{Roman Numeral List}
+
+\begin{enumerate}[label=\roman*.]
+  \item First criterion: the algorithm must converge within 1000 iterations.
+  \item Second criterion: the error rate must be below 5\%.
+  \item Third criterion: the model must generalise to unseen data.
+\end{enumerate}
+
+\subsection{Numbered List with Parentheses}
+
+\begin{enumerate}[label=\arabic*)]
+  \item First step: collect raw data from the sensors.
+  \item Second step: pre-process the data using standard normalisation.
+  \item Third step: train the model and evaluate performance.
+\end{enumerate}
+
+% ======================================================================
+\section{Mathematical Equations}
+\label{sec:equations}
+
+\subsection{Inline Equation}
+
+The well-known mass--energy equivalence is $E = mc^2$, where $m$ is
+the rest mass and $c$ is the speed of light in vacuum.
+
+\subsection{Display Equation (Unnumbered)}
+
+The gravitational force between two masses is given by:
+\[
+  F = G \frac{m_1 m_2}{r^2}
+\]
+where $G$ is the gravitational constant.
+
+\subsection{Numbered Equation (Cross-Referenced)}
+
+\begin{equation}
+  \mathcal{L}(\theta) = \frac{1}{n} \sum_{i=1}^{n}
+    \bigl( y_i - f(x_i; \theta) \bigr)^2
+  \label{eq:mse}
+\end{equation}
+Equation~\ref{eq:mse} defines the mean-squared-error loss function
+commonly used in regression tasks.
+
+\subsection{Multi-Line Aligned Equations}
+
+\begin{align}
+  y &= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \varepsilon
+     \label{eq:linear_model} \\
+  \hat{\beta} &= (X^\top X)^{-1} X^\top y
+     \label{eq:ols}
+\end{align}
+Equations~\ref{eq:linear_model} and~\ref{eq:ols} show the linear
+regression model and its ordinary-least-squares solution.
+
+\subsection{Case-Based Definition}
+
+\begin{equation}
+  \text{ReLU}(x) =
+  \begin{cases}
+    x,  & x \geq 0 \\
+    0,  & x < 0
+  \end{cases}
+  \label{eq:relu}
+\end{equation}
+Equation~\ref{eq:relu} defines the Rectified Linear Unit activation function.
+
+% ======================================================================
+\section{Algorithms / Pseudocode}
+\label{sec:algorithms}
+
+Algorithm~\ref{alg:gradient_descent} demonstrates a simple gradient
+descent optimisation procedure using the algorithm2e package.
+
+\begin{algorithm}[htbp]
+  \caption{Gradient Descent Optimisation}
+  \label{alg:gradient_descent}
+  \SetKwInput{KwParams}{Parameters}
+  \KwParams{Learning rate $\eta$, max iter.\ $T$}
+  \SetKwInput{KwInit}{Initialise}
+  \KwInit{Model parameters $\theta_0$}
+  \For{$t \leftarrow 1$ \KwTo $T$}{
+    Compute gradient $\nabla \mathcal{L}(\theta_{t-1})$\;
+    Update $\theta_t \leftarrow \theta_{t-1} - \eta \nabla \mathcal{L}(\theta_{t-1})$\;
+        \label{line:update}
+    \If{$\|\nabla \mathcal{L}(\theta_t)\| < \epsilon$}{
+      \textbf{break}\;
+    }
+  }
+  \Return{$\theta_t$}\;
+\end{algorithm}
+
+Line~\ref{line:update} of Algorithm~\ref{alg:gradient_descent}
+performs the standard parameter update step.
+
+% ======================================================================
+\section{Figures}
+\label{sec:figures}
+
+\subsection{Single Figure}
+
+% 真实图片请放在 figures/ 文件夹中，例如：
+%   \includegraphics[width=0.5\textwidth]{figures/your-photo.png}
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{example-image-a}
+  \caption{An example figure showing the experimental apparatus}
+  \label{fig:apparatus}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Side-by-Side Figures (Subfigures)}
+
+\begin{figure}[htbp!]
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Before intervention}
+    \label{fig:sub_before}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{After intervention}
+    \label{fig:sub_after}
+  \end{subfigure}
+  \caption{Comparison of results before and after the intervention.}
+  \label{fig:comparison}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/UoA_logo.png}
+  \caption{UoA logo as an example of including a figure from the template's own directory}
+  \label{fig:logo}
+\end{figure}
+
+
+Figure~\ref{fig:apparatus} shows the setup, and
+Figure~\ref{fig:comparison} compares the two conditions.
+
+% ======================================================================
+\section{Tables}
+\label{sec:tables}
+
+\subsection{Standard Three-Line Table}
+
+\begin{table}[htbp!]
+  \centering
+  \caption{Performance comparison of three algorithms on the benchmark
+           dataset}
+  \label{tab:performance}
+  \begin{tabular}{lccc}
+    \toprule
+    Algorithm & Accuracy (\%) & Precision & Recall \\
+    \midrule
+    Baseline   & 87.3 & 0.85 & 0.86 \\
+    Method A   & 94.2 & 0.93 & 0.92 \\
+    Method B   & 96.7 & 0.96 & 0.95 \\
+    \textbf{Method C} & \textbf{97.1} & \textbf{0.97} & \textbf{0.96} \\
+    \bottomrule
+    \multicolumn{4}{l}{\small\textit{Note.} Higher values indicate better performance.}
+  \end{tabular}
+\end{table}
+
+\subsection{Table with Partial Rules (cmidrule)}
+
+\begin{table}[htbp!]
+  \centering
+  \caption{Summary of participant demographics across two cohorts}
+  \label{tab:demographics}
+  \begin{tabular}{lcccc}
+    \toprule
+    & \multicolumn{2}{c}{Cohort A} & \multicolumn{2}{c}{Cohort B} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+    Metric  & Mean  & SD    & Mean  & SD \\
+    \midrule
+    Age (years)  & 24.3 & 3.1 & 31.7 & 4.5 \\
+    Score        & 78.5 & 9.2 & 82.1 & 7.8 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+As shown in Table~\ref{tab:performance}, Method C achieves the best
+performance. Table~\ref{tab:demographics} summarises the participant
+information.
+
+% ======================================================================
+\subsection{Rotated Full-Page Table (Landscape)}
+
+For wide tables that cannot fit on a portrait page, use the
+\texttt{landscape} environment (from \texttt{pdflscape} package)
+to rotate the page 90\textdegree.  The PDF viewer will automatically
+show the page in landscape orientation.
+
+\begin{landscape}
+\begin{table}[htbp]
+  \centering
+  \caption{Comprehensive comparison of model performance across
+           twelve datasets and six methods.  This table is intentionally
+           wide to demonstrate the landscape (rotated) page layout.}
+  \label{tab:wide}
+  \small
+  \begin{tabular}{@{}l cccccc cccccc cccccc@{} }
+    \toprule
+    & \multicolumn{6}{c}{Accuracy (\%)}
+    & \multicolumn{6}{c}{Precision}
+    & \multicolumn{6}{c}{Recall} \\
+    \cmidrule(lr){2-7} \cmidrule(lr){8-13} \cmidrule(lr){14-19}
+    Dataset
+    & A & B & C & D & E & F
+    & A & B & C & D & E & F
+    & A & B & C & D & E & F \\
+    \midrule
+    CIFAR-10   & 94.2&95.1&95.8&96.3&96.8&97.3&0.94&0.95&0.95&0.96&0.96&0.97&0.93&0.94&0.95&0.96&0.96&0.97 \\
+    ImageNet   & 76.5&77.2&78.0&79.5&80.4&82.1&0.75&0.76&0.77&0.79&0.80&0.81&0.74&0.75&0.77&0.78&0.79&0.80 \\
+    MNIST      & 99.1&99.2&99.3&99.4&99.5&99.6&0.99&0.99&0.99&0.99&0.99&0.99&0.99&0.99&0.99&0.99&0.99&0.99 \\
+    SVHN       & 96.3&96.5&96.8&97.0&97.5&98.0&0.96&0.96&0.97&0.97&0.97&0.98&0.95&0.96&0.96&0.97&0.97&0.98 \\
+    COCO       & 72.4&73.1&74.5&75.8&76.8&78.5&0.71&0.72&0.73&0.75&0.76&0.78&0.70&0.71&0.73&0.74&0.75&0.77 \\
+    Pascal VOC & 85.2&86.0&87.3&89.0&90.2&91.4&0.84&0.85&0.86&0.88&0.89&0.91&0.83&0.84&0.85&0.87&0.88&0.90 \\
+    Cityscapes & 80.1&81.4&82.5&83.8&84.2&86.7&0.79&0.80&0.82&0.83&0.83&0.86&0.78&0.79&0.81&0.82&0.82&0.85 \\
+    ADE20K     & 45.3&47.1&48.7&50.2&52.0&55.6&0.44&0.45&0.47&0.50&0.51&0.55&0.43&0.44&0.46&0.49&0.50&0.54 \\
+    KITTI      & 88.2&89.5&90.3&91.7&92.4&93.1&0.87&0.88&0.90&0.91&0.92&0.93&0.86&0.87&0.89&0.90&0.91&0.92 \\
+    SUN RGB-D  & 62.1&64.3&66.8&68.5&71.2&73.9&0.61&0.63&0.66&0.68&0.70&0.73&0.60&0.62&0.65&0.67&0.69&0.72 \\
+    NYU Depth  & 58.7&60.5&63.2&65.8&68.1&70.4&0.57&0.59&0.62&0.65&0.67&0.70&0.56&0.58&0.61&0.64&0.66&0.69 \\
+    ScanNet    & 71.4&73.2&75.6&77.9&80.3&82.7&0.70&0.72&0.74&0.77&0.79&0.82&0.69&0.71&0.73&0.76&0.78&0.81 \\
+    \bottomrule
+    \multicolumn{19}{@{}l@{} }{\small\textit{Note.}
+      A = Baseline; B = ResNet-50; C = ResNet-101;
+      D = ViT-B/16; E = Swin-T; F = Ours.
+      Best per dataset in each metric is underlined.}
+  \end{tabular}
+\end{table}
+\end{landscape}
+
+% ======================================================================
+\section{Long Quotation (UoA-Specific)}
+\label{sec:quote}
+
+This environment follows the University of Auckland guidelines exactly.
+According to Smith~\parencite{example2024}:
+
+\begin{uoaquote}
+This is a demonstration of a long quotation spanning three or more
+lines. Per the University of Auckland formatting guidelines, it is
+indented 10\,mm from the left-hand margin, single-spaced, and has
+no quotation marks. The text appears in a slightly smaller font to
+visually distinguish it from the surrounding body text. This passage
+continues to demonstrate the required formatting for long quotations
+in sub-doctoral theses at the University of Auckland.
+\end{uoaquote}
+
+The findings above have significant implications for future research
+in this area. As highlighted by the quotation, the formatting aligns
+precisely with institutional requirements.
+
+% ======================================================================
+\section{Footnotes}
+\label{sec:footnotes}
+
+This statement is supported by empirical evidence\footnote{See the
+comprehensive review by Author (2024) for a detailed discussion of
+the underlying methodology.}. Additional findings corroborate this
+conclusion\footnote{Recent meta-analyses confirm these results across
+multiple independent studies (Scholar, 2023).}.
+
+\endinput

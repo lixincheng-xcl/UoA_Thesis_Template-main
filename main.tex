@@ -1,0 +1,79 @@
+% main.tex — University of Auckland Thesis
+% Based on: "Guide to the presentation and submission of research components in sub-doctoral qualifications" (University of Auckland)
+% https://www.auckland.ac.nz/en/students/academic-information/postgraduate-students/postgraduate/postgraduate-policies-guidelines-and-forms/presentation-submission-research-sub-doctoral.html
+% Author: Haochen Zhang
+% Compile with: XeLaTeX
+% Version: 1.0 (2026/05/13)
+% ── 字体说明 ──────────────────────────────────────────
+% 默认使用 Times New Roman（Windows 系统自带）。
+% macOS / Linux 用户若编译报 "font not found"：
+%   1. 打开 uoathesis.cls，找到 \setmainfont 行
+%   2. 将 Times New Roman 改为 TeX Gyre Termes
+%   3. 终端执行：sudo apt install texlive-fonts-extra  (Linux)
+%      或 brew install tex-gyre  (macOS + MacTeX)
+\documentclass{uoathesis}
+
+% ============================================
+%  METADATA — edit these fields
+% ============================================
+\ThesisTitle{Your Thesis Title Here}
+\ThesisSubtitle{Optional Subtitle}
+\ThesisAuthor{Your Full Name}
+\ThesisDegree{Master of XXX}
+\ThesisSubject{XXX}
+\ThesisDepartment{Department of XXX}
+\ThesisUniversity{The University of Auckland}
+\ThesisYear{[year of completion]}
+%\ThesisSupervisor{Your Supervisor Name}     % 不用于封面，但可放致谢中
+
+\addbibresource{bibliography/refs.bib}
+
+\begin{document}
+
+  \maketitle
+
+  % ========================================
+  %  FRONT MATTER  (Roman numerals)
+  % ========================================
+  \frontmatter
+
+  \include{frontmatter/abstract}
+  \include{frontmatter/dedication}
+  \include{frontmatter/acknowledgements}
+
+  \tableofcontents
+  \listoffigures
+  \listoftables
+
+  \include{frontmatter/glossaries}
+  \include{frontmatter/acronyms}
+  \include{frontmatter/nomenclature}
+
+  % ========================================
+  %  MAIN TEXT  (Arabic numerals)
+  % ========================================
+  \mainmatter
+
+  \include{chapters/01_introduction}
+  \include{chapters/02_literature_review}
+  \include{chapters/03_methodology}
+  \include{chapters/04_results}
+  \include{chapters/05_discussion}
+  \include{chapters/06_conclusion}
+  \include{chapters/examples}     % 示例章节（可编译查看所有功能演示）
+
+  % ========================================
+  %  APPENDICES
+  % ========================================
+  \appendix
+  \include{appendix/additional_data}
+
+  % ========================================
+  %  BIBLIOGRAPHY  (single spaced per UoA)
+  % ========================================
+  \begin{singlespacing}
+    \setlength{\bibitemsep}{0.7\baselineskip}
+    \printbibliography[heading=bibintoc,title={Bibliography}]
+  \end{singlespacing}
+
+\end{document}
